@@ -6,7 +6,6 @@ const tall = 20; // tallness
 const wide = 12; // wideness
 
 export default class Library extends React.Component {
-
 	constructor(props) {
 	    super(props);
 	    this.state = {
@@ -18,7 +17,7 @@ export default class Library extends React.Component {
     handleClick() {
     	var arr = Array(tall * wide).fill("red")
 
-    	if (this.state.color[68] == "green") {
+    	if (this.state.color[68] === "green") {
     		this.setState({ color: arr });
     	} else {
     		arr[68] = "green";

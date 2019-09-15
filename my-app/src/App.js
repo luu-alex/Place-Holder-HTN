@@ -6,7 +6,7 @@ import './App.css';
 class App extends Component {
   componentDidMount() {
       console.log("stuff");
-      fetch('df8d755d.ngrok.io/data').then(response => response.json()).then(data => console.log(data))
+      //fetch('df8d755d.ngrok.io/data').then(response => response.json()).then(data => console.log(data))
   }
   render() {
     return (

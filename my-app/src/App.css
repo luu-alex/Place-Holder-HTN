@@ -23,6 +23,17 @@
   color: #61dafb;
 }
 
+.jumbotron {
+position:relative;
+background-image: url(./imgs/schoolchair.png);
+background-size: cover; 
+overflow:hidden;
+height:100vh;
+margin-bottom: -500px;
+z-index: -1;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
