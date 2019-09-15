@@ -1,13 +1,13 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Main from './Header';
 import CarouselPage from './Carousel';
 import { Jumbotron, Button } from 'reactstrap';
 import logo from '../imgs/smalllogo.png';
 import Library from './Library';
 import Train from './Train';
 import Tables from './Tables';
+import About from './About';
 
 class Navigation extends React.Component {
 
@@ -42,13 +42,13 @@ class Navigation extends React.Component {
               <Nav.Link eventKey="about-link">About</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="link-1">Library</Nav.Link>
+              <Nav.Link eventKey="link-1">Classroom</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="link-2">Train</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="link-3">Stuff</Nav.Link>
+              <Nav.Link eventKey="link-3">Library</Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar>
@@ -75,8 +75,10 @@ class Navigation extends React.Component {
         }
 
         {
-          this.state.tabKey === "about-link" &&
-          <h1>please help</h1>
+          this.state.tabKey == "about-link" &&
+          <h3><div className="container">
+            <About />
+          </div></h3>
         }
 
         {

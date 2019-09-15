@@ -72,6 +72,8 @@ export default class Library extends React.Component {
 						)
 					}
 		        </Container>
+		        <br></br>
+		        <br></br>
 		    </div>
 		)
 	}
