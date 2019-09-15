@@ -1,6 +1,10 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Main from './Header';
+import CarouselPage from './Carousel';
+import { Jumbotron, Button } from 'reactstrap';
+import logo from '../imgs/smalllogo.png';
 
 class Navigation extends React.Component {
 
@@ -22,13 +26,17 @@ class Navigation extends React.Component {
     return (
       <div>
         <Navbar bg="light" variant="light">
-          <Navbar.Brand href="#home">Placeholder</Navbar.Brand>
+        <img src={logo} style={{width:100, marginTop: -7}} />
+          <Navbar.Brand href="/home"></Navbar.Brand>
           <Nav
             activeKey="/home"
             onSelect={selectedKey => this.handleClick(selectedKey)}
           >
             <Nav.Item>
-              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link eventKey="/home">PlaceHolder</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="about-link">About</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="link-1">Library</Nav.Link>
@@ -40,8 +48,29 @@ class Navigation extends React.Component {
         </Navbar>
 
         {
-           this.state.tabKey == "/home" &&
-           <h2>NONCY</h2>
+           this.state.tabKey == "/home" &&     
+           <div className="container">
+             <div class="jumbotron">
+              <Jumbotron>
+                <h1 className="display-3">PlaceHolder</h1>
+                <p className="lead">The next best thing since sliced bread</p>
+                <hr className="my-2" />
+                <p>Waste less time searching for chairs and find space in a second</p>
+                <Button size="lg"> Learn More
+                </Button>
+              </Jumbotron>
+            </div>
+             <br></br>
+            <CarouselPage />
+            <br></br>
+            <br></br>
+            <br></br>
+           </div>
+        }
+
+        {
+          this.state.tabKey == "about-link" && 
+          <h1>please help</h1>
         }
 
         {
