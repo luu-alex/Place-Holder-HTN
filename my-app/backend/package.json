@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "firebase-admin": "^8.5.0"
+    "firebase-admin": "^8.5.0",
+    "reactstrap": "^8.0.1"
   }
 }

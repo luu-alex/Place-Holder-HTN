@@ -6,12 +6,12 @@ const tall = 20; // tallness
 const wide = 12; // wideness
 
 export default class Library extends React.Component {
+
 	constructor(props) {
 	    super(props);
 	    this.state = {
 	      	color: Array(tall * wide).fill("red")
     	};
-
     	this.handleClick = this.handleClick.bind(this);
     }
 
@@ -25,6 +25,22 @@ export default class Library extends React.Component {
     		this.setState({ color: arr });
     	}
     }
+	componentDidMount() {
+        console.log("stuff");
+		this.timer = setInterval(() =>
+        fetch('https://b2ec7ce4.ngrok.io/data').then(response => response.json()).then(data => {
+			for(let j = 0; j < data.length; j++) {
+				let arr = this.state.color;
+				if(data[j].seat.underPressure){
+					arr[data[j].seat.number] = "green";
+				} else {
+					arr[data[j].seat.number] = "red";
+				}
+				this.setState({color: arr});
+			}
+			console.log(data)
+	    }), 7000);
+	}
 
 	render() {
 		const seating = []
@@ -58,6 +74,6 @@ export default class Library extends React.Component {
 					}
 		        </Container>
 		    </div>
-		)	
+		)
 	}
 }

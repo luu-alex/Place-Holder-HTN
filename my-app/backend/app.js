@@ -19,7 +19,9 @@ app.get('/under', (req, res) => {
     console.log(seat);
     let docRef = db.collection('seats').doc(seat);
     docRef.set({
-      underPressure: true
+      underPressure: true,
+      seat: seat,
+      number: req.query.number
     })
     res.send({ seat: seat });
 })
@@ -29,16 +31,22 @@ app.get('/over', (req, res) => {
     let seat = req.query.seat;
     let docRef = db.collection('seats').doc(seat);
     docRef.set({
-      underPressure: false
+      underPressure: false,
+      seat: seat,
+      number: req.query.number
     })
     res.send({ seat: seat });
 })
 app.get('/data', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
     db.collection('seats').get()
   .then((snapshot) => {
+    let data = []
     snapshot.forEach((doc) => {
       console.log(doc.id, '=>', doc.data());
+      data.push({seat: doc.data()});
     });
+    res.json((data));
   })
   .catch((err) => {
     console.log('Error getting documents', err);
