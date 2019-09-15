@@ -6,6 +6,7 @@ import CarouselPage from './Carousel';
 import { Jumbotron, Button } from 'reactstrap';
 import logo from '../imgs/smalllogo.png';
 import Library from './Library';
+import Train from './Train';
 
 class Navigation extends React.Component {
 
@@ -83,7 +84,9 @@ class Navigation extends React.Component {
 
         {
           this.state.tabKey == "link-2" &&
-          <h3>Hello</h3>
+          <h3><div className="container">
+            <Train />
+          </div></h3>
         }
       </div>
     )
