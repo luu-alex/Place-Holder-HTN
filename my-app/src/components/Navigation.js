@@ -6,6 +6,7 @@ import { Jumbotron, Button } from 'reactstrap';
 import logo from '../imgs/smalllogo.png';
 import Library from './Library';
 import Train from './Train';
+import About from './About';
 
 class Navigation extends React.Component {
 
@@ -71,7 +72,9 @@ class Navigation extends React.Component {
 
         {
           this.state.tabKey == "about-link" && 
-          <h1>please help</h1>
+          <h3><div className="container">
+            <About />
+          </div></h3>
         }
 
         {
