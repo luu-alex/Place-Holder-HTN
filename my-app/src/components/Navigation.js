@@ -1,6 +1,9 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import CarouselPage from './Carousel';
+import Main from './Header';
+import Library from './Library';
 
 class Navigation extends React.Component {
 
@@ -41,12 +44,17 @@ class Navigation extends React.Component {
 
         {
            this.state.tabKey == "/home" &&
-           <h2>NONCY</h2>
+            <div className="container">
+      <Main />
+      <CarouselPage />
+      </div>
         }
 
         {
            this.state.tabKey == "link-1" &&
-           <h3>hello</h3>
+           <h3><div className="container">
+      <Library />
+      </div></h3>
         }
 
         {
